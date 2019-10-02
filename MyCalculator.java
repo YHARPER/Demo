@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class 计算器测试文本 extends JFrame{
+public class MyCalculator extends JFrame{
 	JPanel panel;
 	JTextField text;
 	JButton jb0,jb1,jb2,jb3,jb4,jb5,jb6,jb7,jb8,jb9;//0-9四个数字（可写成数组）
 	JButton bot,add,sub,mul,div,equ;//加减乘除以及小数点五个符号
-	public 计算器测试文本（）{
+	public MyCalculator(){
 		this.setBounds(300,200,400,300);//窗体大小
         this.setTitle("计算器");//窗体名称
 		this.setLayout(new BorderLayout());//设置计算机窗体的布局方式
@@ -43,7 +43,7 @@ public class 计算器测试文本 extends JFrame{
 
 		//新建计算器数字及符号所在区域面板
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(4,4);//设置面板的布局方式
+		panel.setLayout(new GridLayout(4,4));//设置面板的布局方式
 
 		//将各按钮组件放入面板（panel）中
 		//第一行
@@ -118,7 +118,7 @@ public class 计算器测试文本 extends JFrame{
 
 					 if(twxt.getText().contains("+")){//做加法运算
 //					         String[] str1 = text.getText().split("+")//错误语句
-                             StringTokenizer st1 = new StringTokenzer(text.getText(),"+")
+                             StringTokenizer st1 = new StringTokenzer(text.getText(),"+");
 								 //System.out.println("str1======"+st1.nextTolen());
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
@@ -130,7 +130,7 @@ public class 计算器测试文本 extends JFrame{
 
 							 text.setText(text.getText()+" "+(d1+d2));
 					 }else if(text.getText().contains("-")){//做减法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"-")
+					         StringTokenizer st1 = new StringTokenzer(text.getText(),"-");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
@@ -140,7 +140,7 @@ public class 计算器测试文本 extends JFrame{
 
 							  text.setText(text.getText()+" "+(d1-d2));
 					 }else if(text.getText().contains("*")){//做乘法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"*")
+					         StringTokenizer st1 = new StringTokenzer(text.getText(),"*");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
@@ -150,7 +150,7 @@ public class 计算器测试文本 extends JFrame{
 
 							  text.setText(text.getText()+" "+(d1*d2));
 					 }else if(text.getText().contains("/")){//做除法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"/")
+					         StringTokenizer st1 = new StringTokenzer(text.getText(),"/");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
@@ -161,7 +161,7 @@ public class 计算器测试文本 extends JFrame{
 							 text.setText(text.getText()+" "+(d1/d2));
 					  }
 			     }
-			}）；
+			});
    }
 
 			//各按钮的事件处理方法
@@ -184,7 +184,7 @@ public class 计算器测试文本 extends JFrame{
 			//主函数
 			public static void main(String[] args){
 				//TODO Auto-generated method stub
-				new 计算器测试文本（）；
+				new MyCalculator();
 			}
 
 }
