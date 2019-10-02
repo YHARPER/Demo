@@ -19,7 +19,7 @@ public class MyCalculator extends JFrame{
         this.setTitle("计算器");//窗体名称
 		this.setLayout(new BorderLayout());//设置计算机窗体的布局方式
 
-		text = new JTextFeild(15);//计算区域
+		text = new JTextField(15);//计算区域
 		
 		//新建数字按钮
 		jb0 = new JButton("0");
@@ -116,45 +116,45 @@ public class MyCalculator extends JFrame{
 
 					 text.setText(text.getText()+equ.getText());
 
-					 if(twxt.getText().contains("+")){//做加法运算
+					 if(text.getText().contains("+")){//做加法运算
 //					         String[] str1 = text.getText().split("+")//错误语句
-                             StringTokenizer st1 = new StringTokenzer(text.getText(),"+");
+                             StringTokenizer st1 = new StringTokenizer(text.getText(),"+");
 								 //System.out.println("str1======"+st1.nextTolen());
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
-								 StringTokenizer st2 = new StringTokener(st1.nextToken(),"=");
+								 StringTokenizer st2 = new StringTokenizer(st1.nextToken(),"=");
 								 //System.out.println("str2======"+st2.nextTolen());
 								  d2 = Double.parseDouble(st2.nextToken());
 					         }
 
 							 text.setText(text.getText()+" "+(d1+d2));
 					 }else if(text.getText().contains("-")){//做减法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"-");
+					         StringTokenizer st1 = new StringTokenizer(text.getText(),"-");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
-								 StringTokenizer st2 = new StringTokener(st1.nextToken(),"=");
+								 StringTokenizer st2 = new StringTokenizer(st1.nextToken(),"=");
 								 d2 = Double.parseDouble(st2.nextToken());
 					         }
 
 							  text.setText(text.getText()+" "+(d1-d2));
 					 }else if(text.getText().contains("*")){//做乘法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"*");
+					         StringTokenizer st1 = new StringTokenizer(text.getText(),"*");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
-								 StringTokenizer st2 = new StringTokener(st1.nextToken(),"=");
+								 StringTokenizer st2 = new StringTokenizer(st1.nextToken(),"=");
 								 d2 = Double.parseDouble(st2.nextToken());
 						     }
 
 							  text.setText(text.getText()+" "+(d1*d2));
 					 }else if(text.getText().contains("/")){//做除法运算
-					         StringTokenizer st1 = new StringTokenzer(text.getText(),"/");
+					         StringTokenizer st1 = new StringTokenizer(text.getText(),"/");
 							 double d1,d2 = 0;
 							 d1 = Double.parseDouble(st1.nextToken());
 							 while(st1.hasMoreTokens()){
-								 StringTokenizer st2 = new StringTokener(st1.nextToken(),"=");
+								 StringTokenizer st2 = new StringTokenizer(st1.nextToken(),"=");
 								 d2 = Double.parseDouble(st2.nextToken());
 							 }
 
@@ -174,7 +174,7 @@ public class MyCalculator extends JFrame{
 						//text.setText("0");
 						String str = button.getText();
 						//System.out.println(str);
-						text.setTexxt.getText()+str);
+						text.setText(text.getText()+str);
 					}
 
 				});
